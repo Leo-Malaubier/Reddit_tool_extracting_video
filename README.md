@@ -3,4 +3,5 @@ To avoid having a request stopped by the reddit server, we avoid too much spam, 
 - To modify: the waiting time for the closing of all threads is done once the list of urls is completed, all threads can close alone once they have completed their task, but those that bug can only do so once the list is processed.
 -Those that bug can also never close => to see for what?
 - /!\ Line 32 => ydl.extract_info(url, download=False) creates an infinite loop error and prevents the thread from closing properly despite the requested interruption, I still haven't found the solution.
-- 
+-- idea -> maybe it doesn't find the requested format in the link and searches in a loop
+--another idea -> too many associated sub-links 
