@@ -2,3 +2,5 @@ To avoid having a request stopped by the reddit server, we avoid too much spam, 
 (each thread has a lifespan of 1 minute. Be careful, I saw an error that prevented the thread from closing correctly)
 - To modify: the waiting time for the closing of all threads is done once the list of urls is completed, all threads can close alone once they have completed their task, but those that bug can only do so once the list is processed.
 -Those that bug can also never close => to see for what?
+- /!\ Line 32 => ydl.extract_info(url, download=False) creates an infinite loop error and prevents the thread from closing properly despite the requested interruption, I still haven't found the solution.
+- 
